@@ -1,0 +1,113 @@
+body {
+    padding: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva,     Verdana, sans-serif;
+  }
+  
+  /* Grid layout */
+  .container {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 100px 1fr;
+    grid-template-areas: 
+      "header1 header2"
+      "cubeA cubeB";
+    height: 100vh;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px grey;
+  }
+  
+  .cubeA {
+    grid-area: cubeA;
+  }
+  
+  .cubeB {
+    grid-area: cubeB;
+  }
+  
+  .sixFaces{
+    grid-area: header1;
+  }
+  
+  .threeFaces{
+    grid-area: header2;
+  }
+  
+  /* Front face */
+  .cube {
+    position: relative;
+    left: -5%;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0,0,0,0.3);
+  }
+  
+  /* Right face */
+  .cube2{
+    position: absolute;
+    left: 100%;
+    top: -25%;
+    width: 50px;
+    height: 100px;
+    background-color: rgba(10, 10, 10, 0.2);
+    transform: none;
+  }
+  
+  /* Top face */
+  .cube3{
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    top: -50%;
+    left: 25%;
+    background-color: rgba(40, 40, 40, 0.3);
+    transform: none;
+  }
+  
+  /* Left face */
+  .cube4{
+    position: absolute;
+    top: -25%;
+    width: 50px;
+    height: 100px;
+    background-color: rgba(60, 60, 60, 0.4);
+    transform: none;
+  }
+  
+  /* Bottom face */
+  .cube5{
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 100px;
+    height: 50px;
+    background-color: rgba(80, 80, 80, 0.4);
+    transform: none;
+  }
+  
+  /* Background face */
+  .cube6{
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.2);
+    transform: none;
+  }
+  
+  .openup {
+    transition: .2s;
+  }
+  
+  /* Twisting to fit */
+  .cube:hover .cube2, .cube:hover .cube4{
+    transform: skewY(-45deg);
+  }
+  .cube:hover .cube3, .cube:hover .cube5{
+    transform: skewX(-45deg);
+  }
+  
+  /* Background translation */
+  .cube:hover .cube6 {
+    transform: translate(50px, -50px);
+  }
