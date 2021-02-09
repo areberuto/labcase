@@ -13,7 +13,9 @@ body {
     grid-template-areas: 
       "header1 header2"
       "cubeA cubeB";
-    height: 100vh;
+    height: 60vh;
+    width: 75%;
+    min-width: 600px;
     border: 1px solid black;
     border-radius: 5px;
     box-shadow: 1px 1px 1px grey;
