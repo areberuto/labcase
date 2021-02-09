@@ -1,10 +1,10 @@
-# Hiya!
+# ¡Hola!
 
-## Welcome to my lab-showcase.
+Here are some of the projects and ideas I've been tweaking with.
 
-Disclaimer: don't trust anything you see here, take whatever you find useful, and be a good person.
+Take everything you see here with a grain of salt. You may use whatever you find useful!
 
-### [Shapes](https://areberuto.github.io/shapes)
+## [Shapes](https://areberuto.github.io/shapes)
 
 - HTML
 - CSS Transform and positioning
