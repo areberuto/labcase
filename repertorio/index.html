@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,25 +8,147 @@
     <title>Arsa</title>
     <link href="styles/style.css" rel="stylesheet">
 </head>
+
 <body>
-    <h1>Repertorio arsa eee</h1>
-    <ul>
-        <li><a href="https://chords.lacuerda.net/alejandro_astola/ermitanio-2.shtml">Astola - Ermitaño</a></li>
-        <li><a href="https://chords.lacuerda.net/c_tangana/me_maten.shtml">C. Tangana - Me maten</a></li>
-        <li><a href="https://chords.lacuerda.net/c_tangana/los_tontos.shtml">C. Tangana - Los tontos</a></li>
-        <li><a href="https://chords.lacuerda.net/c_tangana/tu_me_dejaste_de_querer.shtml">C. Tangana - Tú me dejaste de querer</a></li>
-        <li><a href="https://genius.com/C-tangana-and-toquinho-comerte-entera-lyrics">C. Tangana - Comerte entera</a></li>
-        <li><a href="https://acordes.lacuerda.net/guitarricadelafuente/guantanamera-3.shtml">Guitarricadelafuente - Guantanamera</a></li>
-        <li><a href="https://acordes.lacuerda.net/guitarricadelafuente/ya_mi_mama_me_decia.shtml">Guitarricadelafuente - Ya mi mama me decía</a></li>
-        <li><a href="https://chords.lacuerda.net/juanito_makande/ninia_voladora.shtml">Juanito Makandé - Niña voladora</a></li>
-        <li><a href="https://chords.lacuerda.net/delinquentes/a_la_luz_del_lorenzo.shtml">Los Delinqüentes - A la luz del Lorenzo</a></li>
-        <li><a href="https://chords.lacuerda.net/delincuentes/el_aire_de_la_calle.shtml">Los Delinqüentes - El aire de la calle</a></li>
-        <li><a href="https://chords.lacuerda.net/jose_el_frances/la_alegria_de_vivir-2.shtml">Ray Heredia - Alegría de vivir</a></li>
-        <li><a href="https://chords.lacuerda.net/triana/senior_troncoso-2.shtml">Triana - Sr. Troncoso</a></li>
-        <li><a href="https://acordes.lacuerda.net/extremoduro/ama_ama_y_ensancha_el_alma.shtml">Extremoduro - Ama, ama, ama y ensancha el alma</a></li>
-        <li><a href="https://chords.lacuerda.net/extremoduro/si_te_vas.shtml">Extremoduro - Si te vas</a></li>
-        <li><a href="https://chords.lacuerda.net/extremoduro/standby-4.shtml">Extremoduro - Stand By</a></li>
-        <li><a href="https://chords.lacuerda.net/vetusta_morla/copenhague-2.shtml">Vetusta Morla - Copenhague</a></li>
+    <script>
+        window.onload = () => {
+
+            // const playlist = [{
+            //         id: "1",
+            //         name: 'Astola',
+            //         songs: [{
+            //             title: 'Ermitaño',
+            //             url: 'https://chords.lacuerda.net/alejandro_astola/ermitanio-2.shtml'
+            //         }]
+            //     },
+            //     {
+            //         id: "2",
+            //         name: 'C. Tangana',
+            //         songs: [{
+            //                 title: 'Me maten',
+            //                 url: 'https://chords.lacuerda.net/c_tangana/me_maten.shtml'
+            //             },
+            //             {
+            //                 title: 'Los tontos',
+            //                 url: 'https://chords.lacuerda.net/c_tangana/los_tontos.shtml'
+            //             }
+            //         ]
+            //     }
+            // ]
+
+            const toggleSongs = (e) => {
+                const el = e.target;
+                el.parentElement.classList.toggle("rep__artist--open")
+            }
+
+            // const filterSongs = (e) => {
+            //     console.log(e.target.value);
+            // }
+
+            const artists = document.querySelectorAll(".rep__artist span");
+
+            artists.forEach(a => {
+                a.addEventListener('click', toggleSongs);
+            });
+
+            // const inputSearch = document.querySelector("#search");
+
+            // inputSearch.addEventListener("input", filterSongs);
+
+            // const loadSongs = () => {
+            //     const list = document.getElementById("list");
+            //     playlist.forEach(artist => {
+            //         const artistNode =
+            //             `<li id="artist${artist.id} class="rep__artist><span>${artist.name}</span></li>`;
+            //         const artistSongs = `<ul id="artist${artist.id}-sub"></ul>`;
+            //         artist.songs.forEach(song => {
+            //             const songNode = `<li><a href=${song.url}>${song.title}</a></li>`
+            //             artistSongs.append(songNode);
+            //         });
+            //         artistNode.append(artistsSongs);
+            //         list.append(artistNode);
+            //     });
+            // }
+
+            // loadSongs();
+        }
+    </script>
+    <h1 class="rep__header">Repertorio arsa eee</h1>
+    <!-- <input id="search" class="rep__search" type="text" placeholder="Buscar"> -->
+    <ul id="list" class="rep__list">
+        <li class="rep__artist"><span>Astola</span>
+            <ul class="rep__sublist">
+                <li><a href="https://chords.lacuerda.net/alejandro_astola/ermitanio-2.shtml">Ermitaño</a></li>
+            </ul>
+        </li>
+        <li class="rep__artist"><span>Chinitito</span>
+            <ul class="rep__sublist">
+                <li><a href="https://chords.lacuerda.net/musica_de_tv/chinitito__chupala.shtml">Chúpala</a></li>
+            </ul>
+        </li>
+        <li class="rep__artist"><span>C. Tangana</span>
+            <ul class="rep__sublist">
+                <li><a href="https://genius.com/C-tangana-and-toquinho-comerte-entera-lyrics">Comerte entera</a>
+                </li>
+                <li><a href="https://chords.lacuerda.net/c_tangana/los_tontos.shtml">Los tontos</a></li>
+                <li><a href="https://chords.lacuerda.net/c_tangana/me_maten.shtml">Me maten</a></li>
+                <li><a href="https://chords.lacuerda.net/c_tangana/tu_me_dejaste_de_querer.shtml">Tú me dejaste de
+                        querer</a></li>
+            </ul>
+        </li>
+        <li class="rep__artist"><span>Extremoduro</span>
+            <ul class="rep__sublist">
+                <li><a href="https://acordes.lacuerda.net/extremoduro/ama_ama_y_ensancha_el_alma.shtml">Ama, ama,
+                        ama y ensancha el alma</a></li>
+                <li><a href="https://chords.lacuerda.net/extremoduro/la_vereda_de_la_puerta-2.shtml">La vereda de la
+                        puerta de atrás</a></li>
+                <li><a href="https://chords.lacuerda.net/extremoduro/si_te_vas.shtml">Si te vas</a></li>
+                <li><a href="https://chords.lacuerda.net/extremoduro/standby-4.shtml">Stand By</a></li>
+            </ul>
+        </li>
+        <li class="rep__artist"><span>Guitarricadelafuente<span>
+                    <ul class="rep__sublist">
+                        <li><a
+                                href="https://acordes.lacuerda.net/guitarricadelafuente/guantanamera-3.shtml">Guantanamera</a>
+                        </li>
+                        <li><a href="https://acordes.lacuerda.net/guitarricadelafuente/ya_mi_mama_me_decia.shtml">Ya mi
+                                mama me decía</a></li>
+                    </ul>
+        </li>
+        <li class="rep__artist"><span>Juanito Makandé</span>
+            <ul class="rep__sublist">
+                <li><a href="https://chords.lacuerda.net/juanito_makande/ninia_voladora.shtml">Niña voladora</a></li>
+            </ul>
+        </li>
+        <li class="rep__artist"><span>Los Delinqüentes</span>
+            <ul class="rep__sublist">
+                <li><a href="https://chords.lacuerda.net/delinquentes/a_la_luz_del_lorenzo.shtml">A la luz del
+                        Lorenzo</a></li>
+                <li><a href="https://chords.lacuerda.net/delincuentes/el_aire_de_la_calle.shtml">El aire de la calle</a>
+                </li>
+            </ul>
+        </li>
+        <li class="rep__artist"><span>Ray Heredia</span>
+            <ul class="rep__sublist">
+                <li><a href="https://chords.lacuerda.net/jose_el_frances/la_alegria_de_vivir-2.shtml">Alegría de vivir</a></li>
+            </ul>
+        </li>
+        <li class="rep__artist"><span>Triana</span>
+            <ul class="rep__sublist">
+                <li><a href="https://chords.lacuerda.net/triana/senior_troncoso-2.shtml">Sr. Troncoso</a></li>
+            </ul>
+        </li>
+        <li class="rep__artist"><span>Vetusta Morla</span>
+            <ul class="rep__sublist">
+                <li><a href="https://chords.lacuerda.net/vetusta_morla/copenhague-2.shtml">Copenhague</a></li>
+            </ul>
+        </li>
+        <li class="rep__artist"><span>Melendi</span>
+            <ul class="rep__sublist">
+                <li><a href="https://chords.lacuerda.net/melendi/novia_a_la_fuga.shtml">Novia a la fuga</a></li>
+            </ul>
+        </li>
     </ul>
 </body>
+
 </html>

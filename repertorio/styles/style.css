@@ -3,8 +3,43 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.rep__header {
+    margin: 1rem;
+}
+
+.rep__search {
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.rep__sublist {
+    padding: 0.75rem 2rem;
+}
+
+.rep__artist span {
+    cursor: pointer;
+    color: blue;
+}
+
+.rep__artist ul {
+    display: none;
+}
+
+.rep__artist.rep__artist--open {
+    margin-bottom: 0;
+}
+
+.rep__artist.rep__artist--open span {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.rep__artist.rep__artist--open ul {
+    display: block;
+}
+
 li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 
 a {
