@@ -1,226 +1,446 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Repertorio</title>
-    <link href="styles/style.css" rel="stylesheet">
-</head>
+    <link href="styles/style.css" rel="stylesheet" />
+  </head>
 
-<body>
+  <body>
     <script>
-        window.onload = () => {
+      window.onload = () => {
+        // const playlist = [{
+        //         id: "1",
+        //         name: 'Astola',
+        //         songs: [{
+        //             title: 'Ermitaño',
+        //             url: 'https://chords.lacuerda.net/alejandro_astola/ermitanio-2.shtml'
+        //         }]
+        //     },
+        //     {
+        //         id: "2",
+        //         name: 'C. Tangana',
+        //         songs: [{
+        //                 title: 'Me maten',
+        //                 url: 'https://chords.lacuerda.net/c_tangana/me_maten.shtml'
+        //             },
+        //             {
+        //                 title: 'Los tontos',
+        //                 url: 'https://chords.lacuerda.net/c_tangana/los_tontos.shtml'
+        //             }
+        //         ]
+        //     }
+        // ]
 
-            // const playlist = [{
-            //         id: "1",
-            //         name: 'Astola',
-            //         songs: [{
-            //             title: 'Ermitaño',
-            //             url: 'https://chords.lacuerda.net/alejandro_astola/ermitanio-2.shtml'
-            //         }]
-            //     },
-            //     {
-            //         id: "2",
-            //         name: 'C. Tangana',
-            //         songs: [{
-            //                 title: 'Me maten',
-            //                 url: 'https://chords.lacuerda.net/c_tangana/me_maten.shtml'
-            //             },
-            //             {
-            //                 title: 'Los tontos',
-            //                 url: 'https://chords.lacuerda.net/c_tangana/los_tontos.shtml'
-            //             }
-            //         ]
-            //     }
-            // ]
+        const toggleSongs = (e) => {
+          const el = e.target;
+          el.parentElement.classList.toggle("rep__artist--open");
+        };
 
-            const toggleSongs = (e) => {
-                const el = e.target;
-                el.parentElement.classList.toggle("rep__artist--open")
-            }
+        // const filterSongs = (e) => {
+        //     console.log(e.target.value);
+        // }
 
-            // const filterSongs = (e) => {
-            //     console.log(e.target.value);
-            // }
+        const artists = document.querySelectorAll(".rep__artist span");
 
-            const artists = document.querySelectorAll(".rep__artist span");
+        artists.forEach((a) => {
+          a.addEventListener("click", toggleSongs);
+        });
 
-            artists.forEach(a => {
-                a.addEventListener('click', toggleSongs);
-            });
+        // const inputSearch = document.querySelector("#search");
 
-            // const inputSearch = document.querySelector("#search");
+        // inputSearch.addEventListener("input", filterSongs);
 
-            // inputSearch.addEventListener("input", filterSongs);
+        // const loadSongs = () => {
+        //     const list = document.getElementById("list");
+        //     playlist.forEach(artist => {
+        //         const artistNode =
+        //             `<li id="artist${artist.id} class="rep__artist><span>${artist.name}</span></li>`;
+        //         const artistSongs = `<ul id="artist${artist.id}-sub"></ul>`;
+        //         artist.songs.forEach(song => {
+        //             const songNode = `<li><a href=${song.url}>${song.title}</a></li>`
+        //             artistSongs.append(songNode);
+        //         });
+        //         artistNode.append(artistsSongs);
+        //         list.append(artistNode);
+        //     });
+        // }
 
-            // const loadSongs = () => {
-            //     const list = document.getElementById("list");
-            //     playlist.forEach(artist => {
-            //         const artistNode =
-            //             `<li id="artist${artist.id} class="rep__artist><span>${artist.name}</span></li>`;
-            //         const artistSongs = `<ul id="artist${artist.id}-sub"></ul>`;
-            //         artist.songs.forEach(song => {
-            //             const songNode = `<li><a href=${song.url}>${song.title}</a></li>`
-            //             artistSongs.append(songNode);
-            //         });
-            //         artistNode.append(artistsSongs);
-            //         list.append(artistNode);
-            //     });
-            // }
-
-            // loadSongs();
-        }
+        // loadSongs();
+      };
     </script>
     <h1 class="rep__header">Repertorio arsa eee</h1>
     <!-- <input id="search" class="rep__search" type="text" placeholder="Buscar"> -->
     <ul id="list" class="rep__list">
-        <li class="rep__artist"><span>Astola</span>
-            <ul class="rep__sublist">
-                <li><a target="_blank"
-                        href="https://chords.lacuerda.net/alejandro_astola/ermitanio-2.shtml">Ermitaño</a></li>
-            </ul>
-        </li>
-        <li class="rep__artist"><span>C. Tangana</span>
-            <ul class="rep__sublist">
-                <li><a target="_blank" href="https://genius.com/C-tangana-and-toquinho-comerte-entera-lyrics">Comerte
-                        entera</a>
-                </li>
-                <li><a target="_blank" href="https://chords.lacuerda.net/c_tangana/los_tontos.shtml">Los tontos</a></li>
-                <li><a target="_blank" href="https://chords.lacuerda.net/c_tangana/me_maten.shtml">Me maten</a></li>
-                <li><a target="_blank" href="https://chords.lacuerda.net/c_tangana/tu_me_dejaste_de_querer.shtml">Tú me
-                        dejaste de querer</a></li>
-            </ul>
-        </li>
-        <li class="rep__artist"><span>Chinitito</span>
-            <ul class="rep__sublist">
-                <li><a target="_blank"
-                        href="https://chords.lacuerda.net/musica_de_tv/chinitito__chupala.shtml">Chúpala</a></li>
-            </ul>
-        </li>
-        <li class="rep__artist"><span>Coldplay</span>
-            <ul class="rep__sublist">
-                <li><a target="_blank" href="https://www.cifraclub.com/coldplay/sparks/">Sparks</a></li>
-            </ul>
-        </li>
-        <li class="rep__artist"><span>Damien Rice</span>
-            <ul class="rep__sublist">
-                <li><a target="_blank"
-                        href="https://www.cifraclub.com/damien-rice/delicate/simplificada.html">Delicate</a></li>
-            </ul>
-        </li>
-        <li class="rep__artist"><span>El Kanka</span>
-            <ul class="rep__sublist">
-                <li><a target="_blank" href="https://acordes.lacuerda.net/kanka/canela_en_rama-4.shtml">Canela en
-                        rama</a>
-                </li>
-                <li><a target="_blank" href="https://acordes.lacuerda.net/kanka/que_bello_es_vivir.shtml">Qué bello es
-                        vivir</a>
-                </li>
-            </ul>
-        </li>
-        <li class="rep__artist"><span>Elliot Smith</span>
-            <ul class="rep__sublist">
-                <li><a target="_blank"
-                        href="https://tabs.ultimate-guitar.com/tab/elliott-smith/between-the-bars-chords-364836">Between
-                        the bars</a>
-                </li>
-                <li><a target="_blank"
-                        href="https://tabs.ultimate-guitar.com/tab/elliott-smith/everything-reminds-me-of-her-chords-2504859">Everything
-                        reminds me of her</a>
-                </li>
-                <li><a target="_blank"
-                        href="https://tabs.ultimate-guitar.com/tab/elliott-smith/say-yes-chords-930394">Say yes</a>
-                </li>
-            </ul>
-        </li>
-        <li class="rep__artist"><span>Extremoduro</span>
-            <ul class="rep__sublist">
-                <li><a target="_blank"
-                        href="https://acordes.lacuerda.net/extremoduro/ama_ama_y_ensancha_el_alma.shtml">Ama, ama,
-                        ama y ensancha el alma</a></li>
-                <li><a target="_blank" href="https://chords.lacuerda.net/extremoduro/la_vereda_de_la_puerta-2.shtml">La
-                        vereda de la
-                        puerta de atrás</a></li>
-                <li><a target="_blank" href="https://acordes.lacuerda.net/extremoduro/salir-5.shtml">Salir</a></li>
-                <li><a target="_blank" href="https://chords.lacuerda.net/extremoduro/si_te_vas.shtml">Si te vas</a></li>
-                <li><a target="_blank" href="https://chords.lacuerda.net/extremoduro/standby-4.shtml">Stand By</a></li>
-            </ul>
-        </li>
-        <li class="rep__artist"><span>Guitarricadelafuente</span>
-            <ul class="rep__sublist">
-                <li><a target="_blank"
-                        href="https://acordes.lacuerda.net/guitarricadelafuente/guantanamera-3.shtml">Guantanamera</a>
-                </li>
-                <li><a target="_blank"
-                        href="https://acordes.lacuerda.net/guitarricadelafuente/ya_mi_mama_me_decia.shtml">Ya mi mama me
-                        decía</a></li>
-            </ul>
-        </li>
-        <li class="rep__artist"><span>Juanito Makandé</span>
-            <ul class="rep__sublist">
-                <li><a target="_blank" href="https://chords.lacuerda.net/juanito_makande/ninia_voladora.shtml">Niña
-                        voladora</a></li>
-            </ul>
-        </li>
-        <li class="rep__artist"><span>Los Delinqüentes</span>
-            <ul class="rep__sublist">
-                <li><a target="_blank" href="https://chords.lacuerda.net/delinquentes/a_la_luz_del_lorenzo.shtml">A la
-                        luz del
-                        Lorenzo</a></li>
-                <li><a target="_blank" href="https://chords.lacuerda.net/delincuentes/el_aire_de_la_calle.shtml">El aire
-                        de la calle</a>
-                </li>
-            </ul>
-        </li>
-        <li class="rep__artist"><span>Pixies</span>
-            <ul class="rep__sublist">
-                <li><a target="_blank"
-                        href="https://tabs.ultimate-guitar.com/tab/pixies/where-is-my-mind-chords-89446">Where is my
-                        mind?</a></li>
-            </ul>
-        </li>
-        <li class="rep__artist"><span>Radiohead</span>
-            <ul class="rep__sublist">
-                <li><a target="_blank" href="https://www.cifraclub.com/radiohead/karma-police/">Karma Police</a></li>
-                <li><a target="_blank" href="https://www.cifraclub.com/radiohead/no-surprises/">No surprises</a></li>
-            </ul>
-        </li>
-        <li class="rep__artist"><span>Ray Heredia</span>
-            <ul class="rep__sublist">
-                <li><a target="_blank"
-                        href="https://chords.lacuerda.net/jose_el_frances/la_alegria_de_vivir-2.shtml">Alegría de
-                        vivir</a></li>
-            </ul>
-        </li>
-        <li class="rep__artist"><span>Triana</span>
-            <ul class="rep__sublist">
-                <li><a target="_blank" href="https://chords.lacuerda.net/triana/senior_troncoso-2.shtml">Sr.
-                        Troncoso</a></li>
-            </ul>
-        </li>
-        <li class="rep__artist"><span>Vetusta Morla</span>
-            <ul class="rep__sublist">
-                <li><a target="_blank"
-                        href="https://chords.lacuerda.net/vetusta_morla/copenhague-2.shtml">Copenhague</a></li>
-                <li><a target="_blank" href="https://acordes.lacuerda.net/vetusta_morla/los_dias_raros.shtml">Los días
-                        raros</a></li>
-            </ul>
-        </li>
-        <li class="rep__artist"><span>Wilco</span>
-            <ul class="rep__sublist">
-                <li><a target="_blank" href="https://tabs.ultimate-guitar.com/tab/wilco/jesus-etc-chords-581246">Jesus
-                        etc</a></li>
-            </ul>
-        </li>
-        <li class="rep__artist"><span>Xoel López</span>
-            <ul class="rep__sublist">
-                <li><a target="_blank" href="https://acordes.lacuerda.net/xoel_lopez/alma_de_oro">Alma de oro</a></li>
-            </ul>
-        </li>
+      <li class="rep__artist">
+        <span>Astola</span>
+        <ul class="rep__sublist">
+          <li>
+            <a
+              target="_blank"
+              href="https://chords.lacuerda.net/alejandro_astola/ermitanio-2.shtml"
+              >Ermitaño</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="rep__artist">
+        <span>C. Tangana</span>
+        <ul class="rep__sublist">
+          <li>
+            <a
+              target="_blank"
+              href="https://genius.com/C-tangana-and-toquinho-comerte-entera-lyrics"
+              >Comerte entera</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://chords.lacuerda.net/c_tangana/los_tontos.shtml"
+              >Los tontos</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://chords.lacuerda.net/c_tangana/me_maten.shtml"
+              >Me maten</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://chords.lacuerda.net/c_tangana/tu_me_dejaste_de_querer.shtml"
+              >Tú me dejaste de querer</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="rep__artist">
+        <span>Chinitito</span>
+        <ul class="rep__sublist">
+          <li>
+            <a
+              target="_blank"
+              href="https://chords.lacuerda.net/musica_de_tv/chinitito__chupala.shtml"
+              >Chúpala</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="rep__artist">
+        <span>Coldplay</span>
+        <ul class="rep__sublist">
+          <li>
+            <a target="_blank" href="https://www.cifraclub.com/coldplay/sparks/"
+              >Sparks</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="rep__artist">
+        <span>Damien Rice</span>
+        <ul class="rep__sublist">
+          <li>
+            <a
+              target="_blank"
+              href="https://www.cifraclub.com/damien-rice/delicate/simplificada.html"
+              >Delicate</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="rep__artist">
+        <span>El Kanka</span>
+        <ul class="rep__sublist">
+          <li>
+            <a
+              target="_blank"
+              href="https://acordes.lacuerda.net/kanka/canela_en_rama-4.shtml"
+              >Canela en rama</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://acordes.lacuerda.net/kanka/que_bello_es_vivir.shtml"
+              >Qué bello es vivir</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="rep__artist">
+        <span>Elliot Smith</span>
+        <ul class="rep__sublist">
+          <li>
+            <a
+              target="_blank"
+              href="https://tabs.ultimate-guitar.com/tab/elliott-smith/between-the-bars-chords-364836"
+              >Between the bars</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://tabs.ultimate-guitar.com/tab/elliott-smith/everything-reminds-me-of-her-chords-2504859"
+              >Everything reminds me of her</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://tabs.ultimate-guitar.com/tab/elliott-smith/say-yes-chords-930394"
+              >Say yes</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="rep__artist">
+        <span>Estopa</span>
+        <ul class="rep__sublist">
+          <li>
+            <a
+              target="_blank"
+              href="https://acordes.lacuerda.net/estopa/tu_calorro.shtml"
+              >Tu calorro</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="rep__artist">
+        <span>Extremoduro</span>
+        <ul class="rep__sublist">
+          <li>
+            <a
+              target="_blank"
+              href="https://acordes.lacuerda.net/extremoduro/ama_ama_y_ensancha_el_alma.shtml"
+              >Ama, ama, ama y ensancha el alma</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://chords.lacuerda.net/extremoduro/la_vereda_de_la_puerta-2.shtml"
+              >La vereda de la puerta de atrás</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://acordes.lacuerda.net/extremoduro/salir-5.shtml"
+              >Salir</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://chords.lacuerda.net/extremoduro/si_te_vas.shtml"
+              >Si te vas</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://chords.lacuerda.net/extremoduro/standby-4.shtml"
+              >Stand By</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="rep__artist">
+        <span>Guitarricadelafuente</span>
+        <ul class="rep__sublist">
+          <li>
+            <a
+              target="_blank"
+              href="https://acordes.lacuerda.net/guitarricadelafuente/guantanamera-3.shtml"
+              >Guantanamera</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://acordes.lacuerda.net/guitarricadelafuente/ya_mi_mama_me_decia.shtml"
+              >Ya mi mama me decía</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="rep__artist">
+        <span>Juanito Makandé</span>
+        <ul class="rep__sublist">
+          <li>
+            <a
+              target="_blank"
+              href="https://chords.lacuerda.net/juanito_makande/ninia_voladora.shtml"
+              >Niña voladora</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="rep__artist">
+        <span>Keane</span>
+        <ul class="rep__sublist">
+          <li>
+            <a
+              target="_blank"
+              href="https://www.cifraclub.com/keane/everybodys-changing/"
+              >Everybody's changing</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="rep__artist">
+        <span>Los Delinqüentes</span>
+        <ul class="rep__sublist">
+          <li>
+            <a
+              target="_blank"
+              href="https://chords.lacuerda.net/delinquentes/a_la_luz_del_lorenzo.shtml"
+              >A la luz del Lorenzo</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://chords.lacuerda.net/delincuentes/el_aire_de_la_calle.shtml"
+              >El aire de la calle</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="rep__artist">
+        <span>Ombligo</span>
+        <ul class="rep__sublist">
+          <li>
+            <a
+              target="_blank"
+              href="https://es.ultimate-guitar.com/tab/ombligo/aire-chords-3907253"
+              >Aire</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="rep__artist">
+        <span>Pixies</span>
+        <ul class="rep__sublist">
+          <li>
+            <a
+              target="_blank"
+              href="https://tabs.ultimate-guitar.com/tab/pixies/where-is-my-mind-chords-89446"
+              >Where is my mind?</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="rep__artist">
+        <span>Radiohead</span>
+        <ul class="rep__sublist">
+          <li>
+            <a
+              target="_blank"
+              href="https://www.cifraclub.com/radiohead/karma-police/"
+              >Karma Police</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://www.cifraclub.com/radiohead/no-surprises/"
+              >No surprises</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="rep__artist">
+        <span>Ray Heredia</span>
+        <ul class="rep__sublist">
+          <li>
+            <a
+              target="_blank"
+              href="https://chords.lacuerda.net/jose_el_frances/la_alegria_de_vivir-2.shtml"
+              >Alegría de vivir</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="rep__artist">
+        <span>Rita Payés</span>
+        <ul class="rep__sublist">
+          <li>
+            <a
+              target="_blank"
+              href="https://chords.lacuerda.net/rita_payes/nunca_vas_a_comprender-2.shtml"
+              >Nunca vas a comprender</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="rep__artist">
+        <span>Triana</span>
+        <ul class="rep__sublist">
+          <li>
+            <a
+              target="_blank"
+              href="https://chords.lacuerda.net/triana/senior_troncoso-2.shtml"
+              >Sr. Troncoso</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="rep__artist">
+        <span>Vetusta Morla</span>
+        <ul class="rep__sublist">
+          <li>
+            <a
+              target="_blank"
+              href="https://chords.lacuerda.net/vetusta_morla/copenhague-2.shtml"
+              >Copenhague</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://acordes.lacuerda.net/vetusta_morla/los_dias_raros.shtml"
+              >Los días raros</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="rep__artist">
+        <span>Wilco</span>
+        <ul class="rep__sublist">
+          <li>
+            <a
+              target="_blank"
+              href="https://tabs.ultimate-guitar.com/tab/wilco/jesus-etc-chords-581246"
+              >Jesus etc</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="rep__artist">
+        <span>Xoel López</span>
+        <ul class="rep__sublist">
+          <li>
+            <a
+              target="_blank"
+              href="https://acordes.lacuerda.net/xoel_lopez/alma_de_oro"
+              >Alma de oro</a
+            >
+          </li>
+        </ul>
+      </li>
     </ul>
-    <img style="margin: 16px" width="100" height="100" src="assets/qr-repertorio.png" alt="QR del enlace" />
-</body>
-
+    <img
+      style="margin: 16px"
+      width="100"
+      height="100"
+      src="assets/qr-repertorio.png"
+      alt="QR del enlace"
+    />
+  </body>
 </html>
